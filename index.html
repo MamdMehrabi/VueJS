@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ msg }}</h1>
+        <h1>{{ age }}</h1>
+        <hr>
+        <p>
+            name: <input type="text" v-model="msg">
+        </p>
+        <p>
+            age : <button @click="age++">+</button>
+            <button @click="age--">-</button>
+            <button @click="isClear();">Clear</button>
+        </p>
+    </div>
+
+    <script src="vue3.0.7.js"></script>
+    <script>
+        const app = Vue.createApp( {
+            data() {
+                return {
+                    msg: "Hello World!",
+                    age: '17',
+                }
+            },
+            methods:{
+                isClear(){
+                    this.age = '0';
+                }
+            }
+        } )
+        app.mount('#app')
+    </script>
+</body>
+</html>
